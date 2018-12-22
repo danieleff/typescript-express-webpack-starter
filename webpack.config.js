@@ -1,5 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = (env, argv) => {
     
@@ -14,7 +16,12 @@ module.exports = (env, argv) => {
             new webpack.DefinePlugin({
                 WEBPACK_DEFINE_SERVER_URL: JSON.stringify("http://localhost:3000")
             }),
+            new CleanWebpackPlugin(['build/client']),
         ],
+        output: {
+            filename: "[name].[hash:8].js",
+            path: path.resolve(__dirname, 'build/client')
+        },
         resolve: {
             extensions: [".ts", ".tsx", ".js"]
         },

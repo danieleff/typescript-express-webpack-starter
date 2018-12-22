@@ -5,4 +5,4 @@ root.innerHTML = "Loaded";
 
 declare var WEBPACK_DEFINE_SERVER_URL: string;
 
-fetch(WEBPACK_DEFINE_SERVER_URL).then(res => res.text()).then(text => root.innerHTML = text);
+fetch(WEBPACK_DEFINE_SERVER_URL + "/api/test").then(res => res.text()).then(text => root.innerHTML = text);

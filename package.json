@@ -7,8 +7,8 @@
     "start-client": "webpack-dev-server --mode development",
     "start-server": "ts-node-dev --no-notify src/server/index.ts",
     "build": "tsc && webpack --mode production",
-    "start-daemon": "pm2 restart build/server/server/index.js",
-    "stop-daemon": "pm2 stop -f build/server/server/index.js"
+    "start-daemon": "pm2 start -f build/server/server/index.js",
+    "stop-daemon": "pm2 stop build/server/server/index.js"
   },
   "author": "",
   "license": "MIT",

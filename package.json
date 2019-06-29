@@ -4,7 +4,7 @@
   "description": "Starter project for full server-client in typescript, express server, webpack frontend.",
   "main": "src/index.js",
   "scripts": {
-    "start-client": "webpack-dev-server --mode development",
+    "start-client": "webpack-dev-server --mode development --host 0.0.0.0",
     "start-server": "ts-node-dev --no-notify src/server/index.ts",
     "build": "tsc && webpack --mode production",
     "start-daemon": "pm2 start build/server/server/index.js",
